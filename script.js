@@ -92,7 +92,7 @@ gallery.innerHTML += `
 <div class="project-card">
 
 
-<img src="assets/images/${image}">
+<img class="project-image" src="assets/images/${image}">
 
 
 <div class="overlay">
@@ -246,59 +246,46 @@ card.style.transform =
 
 
 
-
 // ===============================
 // Lightbox
 // ===============================
 
-
-const lightbox =
-document.getElementById("lightbox");
-
-
-const lightboxImg =
-document.getElementById("lightbox-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const close = document.querySelector(".close");
 
 
-const close =
-document.querySelector(".close");
+// فتح الصورة
+document.addEventListener("click", function(e){
 
+    if(e.target.classList.contains("project-image")){
 
+        lightbox.classList.add("active");
+        lightboxImg.src = e.target.src;
 
-document.querySelectorAll(".project-card img")
-.forEach(img=>{
-
-
-img.addEventListener(
-"click",
-()=>{
-
-
-lightbox.style.display="flex";
-
-
-lightboxImg.src =
-img.src;
-
+    }
 
 });
 
 
-});
+// قفل الصورة
+close.onclick = function(){
 
-
-
-close.onclick = ()=>{
-
-lightbox.style.display="none";
+    lightbox.classList.remove("active");
 
 };
 
 
+// قفل بالضغط خارج الصورة
+lightbox.onclick = function(e){
 
+    if(e.target === lightbox){
 
+        lightbox.classList.remove("active");
 
+    }
 
+};
 // ===============================
 // Buttons
 // ===============================
