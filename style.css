@@ -1466,40 +1466,9 @@ margin:auto;
 
 opacity:.85;
 
-}/* Titles Upgrade */
-
-section h2{
-
-position:relative;
-
-display:inline-block;
-
-left:50%;
-
-transform:translateX(-50%);
-
-}
-
-
-
-section h2::after{
-
-content:"";
-
-display:block;
-
-width:60px;
-
-height:3px;
-
-margin:15px auto 0;
-
-background:linear-gradient(
-90deg,
-#7c3cff,
-#00e5ff
-);
-
-border-radius:10px;
-
-}
+}.hero p{
+    width:100%;
+    max-width:700px;
+    margin:20px auto;
+    text-align:center;
+}   
